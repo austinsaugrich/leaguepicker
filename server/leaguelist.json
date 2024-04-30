@@ -1,0 +1,1171 @@
+[
+  {
+    "name": "Aatrox",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Ahri",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Akali",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Mid"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Akshan",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Alistar",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Amumu",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Anivia",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Annie",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Aphelios",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Ashe",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Aurelion Sol",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Azir",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Bard",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Bel'Veth",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Blitzcrank",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Brand",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support", "Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Braum",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Caitlyn",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Camille",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Cassiopeia",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Cho'Gath",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Corki",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Darius",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Diana",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid", "Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Draven",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Dr. Mundo",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Ekko",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid", "Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Elise",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Evelynn",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Ezreal",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Fiddlesticks",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Fiora",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Fizz",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Galio",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Gangplank",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Garen",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Gnar",
+    "attack": "Ranged",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Gragas",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Support", "Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Graves",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Gwen",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Hecarim",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Heimerdinger",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Top", "Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Illaoi",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Irelia",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Ivern",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Janna",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Jarvan IV",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Jax",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Jayce",
+    "attack": "Both",
+    "mana": true,
+    "lane": ["Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Jhin",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Jinx",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kai'Sa",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kalista",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Karma",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Karthus",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle", "Support", "Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Kassadin",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Katarina",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Mid"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Kayle",
+    "attack": "Both",
+    "mana": true,
+    "lane": ["Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kayn",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kennen",
+    "attack": "Ranged",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Kha'Zix",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kindred",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kled",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Kog'Maw",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "K'Sante",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "LeBlanc",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Lee Sin",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle", "Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Leona",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Lillia",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Lissandra",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Lucian",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Lulu",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Lux",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Malphite",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Malzahar",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Maokai",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Master Yi",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Miss Fortune",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Wukong",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Mordekaiser",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Morgana",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Nami",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Nasus",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Nautilus",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Neeko",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Nidalee",
+    "attack": "Both",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Nilah",
+    "attack": "Both",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Nocturne",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Nunu & Willump",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Olaf",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Orianna",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Ornn",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Pantheon",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid", "Support", "Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Poppy",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle", "Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Pyke",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Qiyana",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Quinn",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Top", "Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Rakan",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Rammus",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Rek'Sai",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Rell",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Renata Glasc",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Renekton",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Rengar",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Riven",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Rumble",
+    "attack": "Ranged",
+    "mana": false,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Ryze",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Samira",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Hwei",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Smolder",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Sejuani",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Senna",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Seraphine",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support", "Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Sett",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Shaco",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle", "Support"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Shen",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Shyvana",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Singed",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Sion",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Sivir",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Skarner",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Sona",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Soraka",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Swain",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Sylas",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Syndra",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Tahm Kench",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Taliyah",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Talon",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Taric",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Teemo",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Thresh",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Tristana",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Trundle",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle", "Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Tryndamere",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Twisted Fate",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Twitch",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Udyr",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Urgot",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Varus",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "Mixed"
+  },
+  {
+    "name": "Vayne",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Veigar",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Vel'Koz",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Vex",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Vi",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Viego",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Viktor",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Vladimir",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Mid"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Volibear",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Warwick",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Xayah",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Xerath",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Xin Zhao",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Yasuo",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Mid", "Bot", "Top", "Support"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Yone",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Yorick",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Top"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Yuumi",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Zac",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Zed",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Zeri",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot", "Mid"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Ziggs",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Zilean",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Zoe",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Zyra",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Naafiri",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Mid", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Briar",
+    "attack": "Melee",
+    "mana": true,
+    "lane": ["Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Milo",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Support"],
+    "damagetype": "AP"
+  }
+]
