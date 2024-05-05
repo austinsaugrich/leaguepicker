@@ -18,7 +18,7 @@
     "attack": "Melee",
     "mana": false,
     "lane": ["Mid"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Akshan",
@@ -32,7 +32,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Support"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Amumu",
@@ -116,7 +116,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Support"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Caitlyn",
@@ -151,7 +151,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Mid"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Darius",
@@ -165,7 +165,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Mid", "Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Draven",
@@ -179,7 +179,7 @@
     "attack": "Melee",
     "mana": false,
     "lane": ["Top"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Ekko",
@@ -207,7 +207,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Bot", "Mid"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Fiddlesticks",
@@ -277,7 +277,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Top", "Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Hecarim",
@@ -396,7 +396,7 @@
     "attack": "Melee",
     "mana": false,
     "lane": ["Mid"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Kayle",
@@ -445,7 +445,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Bot"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "K'Sante",
@@ -543,7 +543,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Bot"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Wukong",
@@ -599,7 +599,7 @@
     "attack": "Both",
     "mana": true,
     "lane": ["Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AP"
   },
   {
     "name": "Nilah",
@@ -802,7 +802,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Jungle", "Support"],
-    "damagetype": "Mixed"
+    "damagetype": "AD, AP"
   },
   {
     "name": "Shen",
@@ -816,7 +816,7 @@
     "attack": "Melee",
     "mana": false,
     "lane": ["Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AD, AP"
   },
   {
     "name": "Singed",
@@ -844,7 +844,7 @@
     "attack": "Melee",
     "mana": true,
     "lane": ["Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Sona",
@@ -914,7 +914,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Top"],
-    "damagetype": "Mixed"
+    "damagetype": "AD, AP"
   },
   {
     "name": "Thresh",
@@ -956,14 +956,14 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Bot"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Udyr",
     "attack": "Melee",
     "mana": true,
     "lane": ["Top", "Jungle"],
-    "damagetype": "Mixed"
+    "damagetype": "AD"
   },
   {
     "name": "Urgot",
@@ -977,7 +977,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Bot"],
-    "damagetype": "Mixed"
+    "damagetype": "AD, AP"
   },
   {
     "name": "Vayne",
