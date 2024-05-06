@@ -10,6 +10,8 @@ export default function Blacklist({
   const [apChecked, setApChecked] = useState(false);
   const [rangedChecked, setRangedChecked] = useState(true);
   const [meleeChecked, setMeleeChecked] = useState(false);
+  const [manaChecked, setManaChecked] = useState(true);
+  const [nomanaChecked, setNoManaChecked] = useState(false);
 
   const handleLocalChecked = (e) => {
     const { id, checked } = e.target;
@@ -26,6 +28,12 @@ export default function Blacklist({
       case "melee":
         setMeleeChecked(checked);
         break;
+      case "Mana":
+        setManaChecked(checked);
+        break;
+      case "NoMana":
+        setNoManaChecked(checked);
+        break;
       default:
         break;
     }
@@ -36,6 +44,7 @@ export default function Blacklist({
 
   const isAnyTypeChecked = adChecked || apChecked;
   const isAnyRangeChecked = rangedChecked || meleeChecked;
+  const isAnyManaChecked = manaChecked || nomanaChecked;
 
   return (
     <div className='BlacklistContainer'>
@@ -103,8 +112,13 @@ export default function Blacklist({
           />
         </div>
       </div>
-      {!isAnyTypeChecked && <p>Please select either AD or AP.</p>}
-      {!isAnyRangeChecked && <p>Please select either Ranged or Melee.</p>}
+      {!isAnyTypeChecked && <p>Please select either AD or AP or both.</p>}
+      {!isAnyRangeChecked && (
+        <p>Please select either Ranged or Melee or both.</p>
+      )}
+      {!isAnyManaChecked && (
+        <p>Please select either Mana or No Mana or both.</p>
+      )}
       <div className='champsearch'>
         <form action='#' className='champform'>
           <input type='text' placeholder='Search for champion' name='search' />
