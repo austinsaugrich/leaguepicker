@@ -40,7 +40,7 @@ export default function Blacklist({
   return (
     <div className='BlacklistContainer'>
       <h1>Blacklist Champions</h1>
-      <h3>Remove types from list</h3>
+      <h3>Include the following attributes</h3>
       <div className='radioButtons'>
         <div className='radiorow'>
           <label>AD</label>
@@ -49,7 +49,6 @@ export default function Blacklist({
             name='options'
             id='ad'
             value='AD'
-            defaultChecked={adChecked}
             onChange={(e) => handleLocalChecked(e)}
           />
         </div>
@@ -60,7 +59,6 @@ export default function Blacklist({
             name='options'
             id='ap'
             value='AP'
-            defaultChecked={apChecked}
             onChange={(e) => handleLocalChecked(e)}
           />
         </div>
@@ -71,8 +69,17 @@ export default function Blacklist({
             name='options'
             id='Mana'
             value='Mana'
-            defaultChecked
-            disabled
+            onChange={(e) => handleLocalChecked(e)}
+          />
+        </div>
+        <div className='radiorow'>
+          <label>No Mana</label>
+          <input
+            type='checkbox'
+            name='options'
+            id='NoMana'
+            value='manaless'
+            onChange={(e) => handleLocalChecked(e)}
           />
         </div>
         <div className='radiorow'>
@@ -82,7 +89,6 @@ export default function Blacklist({
             name='options'
             id='ranged'
             value='Ranged'
-            defaultChecked={rangedChecked}
             onChange={(e) => handleLocalChecked(e)}
           />
         </div>
@@ -93,7 +99,6 @@ export default function Blacklist({
             name='options'
             id='melee'
             value='Melee'
-            defaultChecked={meleeChecked}
             onChange={(e) => handleLocalChecked(e)}
           />
         </div>

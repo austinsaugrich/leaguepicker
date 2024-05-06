@@ -21,10 +21,13 @@ app.add_middleware(
 )
 
 
+# class Champmodel(BaseModel):
+#     Lane: str | None = 'Top'
+#     Attacktype: str | None = 'Melee'
+#     Damagetype: str | None = "AD"
 class Champmodel(BaseModel):
     Lane: str | None = 'Top'
-    Attacktype: str | None = 'Melee'
-    Damagetype: str | None = "AD"
+    Attributes: list | None = []
 
 # champ = Champion()
 # print(champ.name)
@@ -41,48 +44,60 @@ def get_lane(lanes, lane_choice):
     return False
 
 
-def get_attack(at, attack_type):
-    if not attack_type:
-        return True
-    if attack_type in at:
-        return True
+def get_attack(at, attributes):
+    for attr in attributes:
+        if attr in at:
+            return True
     return False
 
 
-def get_damage_type(dt, damage_type):
-    if not damage_type:
-        return True
-    if damage_type in dt:
-        return True
+def get_damage_type(dt, attributes):
+    for attr in attributes:
+        if attr in dt:
+            return True
     return False
 
 
-def random_champ(champions):
-    champ_count = len(champions)
-    return random.randint(1, champ_count) - 1
+def get_mana(mana, attributes):
+    for attr in attributes:
+        if mana and "Mana" in attr:
+            return True
+        elif not mana and "manaless" in attr:
+            return True
+    return False
+
+
+def random_champ(champs):
+    if champs:
+        champ_count = len(champs)
+        return random.randint(1, champ_count) - 1
+    else:
+        print('ERROR')
+        return {}
 
 # function to load json file
 
 
 def load_champ(req):
     with open('./leaguelist.json') as champs_file:
-        champions = []
-        data = json.load(champs_file)
-        print(req.Lane)
-        for champs in data:
-            lanecheck = get_lane(champs["lane"], req.Lane)
-            if lanecheck:
-                if req.AD:
-                    ADcheck = get_attack(champs['damagetype'], 'AD')
-
-                if ADcheck:
-                    APcheck = get_attack(champs['attack'], req.AP)
-                    if APcheck:
-                        ADcheck = get_attack(champs['attack'], req.AD)
+        champs = json.load(champs_file)
+        print(req)
+        filterchamps = []
+        for champ in champs:
+            if not get_lane(champ['lane'], req.Lane):
+                continue
+            if not get_attack(champ['attack'], req.Attributes):
+                continue
+            if not get_damage_type(champ['damagetype'], req.Attributes):
+                continue
+            if not get_mana(champ['mana'], req.Attributes):
+                continue
+            filterchamps.append(champ)
+        return filterchamps
 
 
 @app.post("/")
 def handler(req: Champmodel):
-    champions = load_champ(req)
-    id = random_champ(champions)
-    return champions[id]
+    champs = load_champ(req)
+    id = random_champ(champs)
+    return champs[id]

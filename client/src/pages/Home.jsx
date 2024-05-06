@@ -7,63 +7,33 @@ import Playable from "../components/Playable";
 import axios from "axios";
 export default function Home() {
   const [SelectedChampion, setSelectedChampion] = useState("");
-  const [SelectedFilters, setSelectedFilters] = useState({});
-  async function grabChampion(
-    lane = "",
-    AD = true,
-    AP = true,
-    Melee = true,
-    Ranged = true,
-    Mana = true
-  ) {
-    let filter = {
-      lane: lane,
-      AD: AD,
-      AP: AP,
-      Melee: Melee,
-      Ranged: Ranged,
-      Mana: Mana,
-    };
-    const data = await axios.post("http://127.0.0.1:8000", filter);
+  const [SelectedFilters, setSelectedFilters] = useState([]);
+  async function grabChampion(lane) {
+    const data = await axios.post("http://127.0.0.1:8000", {
+      Lane: lane,
+      Attributes: SelectedFilters,
+    });
     console.log(data.data);
     setSelectedChampion(data.data);
-
-    setSelectedFilters(filter);
   }
 
   function clearChamp() {
     setSelectedChampion("");
   }
   function reroll() {
-    grabChampion(
-      SelectedFilters.lane,
-      SelectedFilters.AD,
-      SelectedFilters.AP,
-      SelectedFilters.Ranged,
-      SelectedFilters.Melee,
-      SelectedFilters.Mana
-    );
+    grabChampion("Support");
   }
   function updateFilters(e) {
-    const checked = e.target.checked;
-    const temp = SelectedFilters;
-    const poop = e.target.value;
-    if (poop == "AD") {
-      temp.ad = checked;
+    const value = e.target.value;
+
+    let filters = [...SelectedFilters];
+    if (filters.includes(value)) {
+      filters = filters.filter((f) => f !== value);
+    } else {
+      filters.push(value);
     }
-    if (poop == "AP") {
-      temp.ad = checked;
-    }
-    if (poop == "Ranged") {
-      temp.ad = checked;
-    }
-    if (poop == "Melee") {
-      temp.ad = checked;
-    }
-    if (poop == "Mana") {
-      temp.ad = checked;
-    }
-    setSelectedFilters(temp);
+
+    setSelectedFilters(filters);
   }
 
   return (
@@ -96,13 +66,11 @@ export default function Home() {
                 champname={SelectedChampion.name}
                 lanename={SelectedChampion.lane}
                 attacktype={SelectedChampion.damagetype}
-                attack={SelectedChampion.attacktype}
+                attack={SelectedChampion.attack}
                 rerollfunc={reroll}
               />
             </>
-          ) : (
-            ""
-          )}
+          ) : null}
         </div>
         <div className='rightside'>
           <Playable />
