@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-export default function Blacklist({
-  filterfunc,
-  attackdamage,
-  attacktype,
-  handleChecked: propHandleChecked,
-}) {
+export default function Blacklist({ handleChecked: propHandleChecked }) {
   const [adChecked, setAdChecked] = useState(true);
   const [apChecked, setApChecked] = useState(false);
   const [rangedChecked, setRangedChecked] = useState(true);

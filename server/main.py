@@ -26,7 +26,7 @@ app.add_middleware(
 #     Attacktype: str | None = 'Melee'
 #     Damagetype: str | None = "AD"
 class Champmodel(BaseModel):
-    Lane: str | None = 'Top'
+    Lane: str | None = ''
     Attributes: list | None = []
 
 # champ = Champion()

@@ -1,5 +1,4 @@
 import placeholder from "../assets/mid.png";
-import Button from "./Button";
 
 export default function ChampInfo({
   champname,
@@ -8,7 +7,9 @@ export default function ChampInfo({
   attack,
   closefunc,
   rerollfunc,
+  lanepref,
 }) {
+  console.log(lanepref);
   return (
     <div className='chosencontainer'>
       <div className='imgdiv'>
@@ -21,7 +22,7 @@ export default function ChampInfo({
           lane. Their attack type is {attacktype} and they are {attack}. You can
           find their build here.
         </p>
-        <Button text='Re-Roll' buttonname='reroll' onClickFunc={rerollfunc} />
+        <button onClick={() => rerollfunc(lanepref)}>Re-Roll</button>
       </div>
       <div className='rightdiv'>
         <button onClick={() => closefunc()}>X</button>

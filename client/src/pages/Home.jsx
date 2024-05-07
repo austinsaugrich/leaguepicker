@@ -8,21 +8,24 @@ import axios from "axios";
 export default function Home() {
   const [SelectedChampion, setSelectedChampion] = useState("");
   const [SelectedFilters, setSelectedFilters] = useState([]);
+  const [prefLane, setPrefLane] = useState("");
   async function grabChampion(lane) {
     const data = await axios.post("http://127.0.0.1:8000", {
       Lane: lane,
       Attributes: SelectedFilters,
     });
-    console.log(data.data);
     setSelectedChampion(data.data);
+    if (lane) {
+      setPrefLane(lane);
+    } else {
+      setPrefLane("");
+    }
   }
 
   function clearChamp() {
     setSelectedChampion("");
   }
-  function reroll() {
-    grabChampion("Support");
-  }
+
   function updateFilters(e) {
     const value = e.target.value;
 
@@ -43,12 +46,7 @@ export default function Home() {
       </div>
       <div className='Container'>
         <div className='leftside'>
-          <Blacklist
-            filterfunc={reroll}
-            attacktype={SelectedChampion.Attacktype}
-            attackdamage={SelectedChampion.attackdamage}
-            handleChecked={updateFilters}
-          />
+          <Blacklist handleChecked={updateFilters} />
         </div>
         <div className='main'>
           <LeagueMap onClickFunc={grabChampion} />
@@ -57,7 +55,12 @@ export default function Home() {
             text='Completely Random'
             buttonname={"random"}
           />
-          {/* <Button text='Need League? Download here!' buttonname={"download"} /> */}
+          {
+            <Button
+              text='Need League? Download here!'
+              buttonname={"download"}
+            />
+          }
           {SelectedChampion ? (
             <>
               <div className='popup'></div>
@@ -67,7 +70,8 @@ export default function Home() {
                 lanename={SelectedChampion.lane}
                 attacktype={SelectedChampion.damagetype}
                 attack={SelectedChampion.attack}
-                rerollfunc={reroll}
+                rerollfunc={grabChampion}
+                lanepref={prefLane}
               />
             </>
           ) : null}
