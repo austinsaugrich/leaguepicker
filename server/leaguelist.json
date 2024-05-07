@@ -337,7 +337,7 @@
   },
   {
     "name": "Jayce",
-    "attack": "Both",
+    "attack": "Ranged",
     "mana": true,
     "lane": ["Top", "Mid"],
     "damagetype": "AD"
@@ -400,7 +400,7 @@
   },
   {
     "name": "Kayle",
-    "attack": "Both",
+    "attack": "Ranged",
     "mana": true,
     "lane": ["Top", "Mid"],
     "damagetype": "AD"
@@ -596,14 +596,14 @@
   },
   {
     "name": "Nidalee",
-    "attack": "Both",
+    "attack": "Ranged",
     "mana": true,
     "lane": ["Jungle"],
     "damagetype": "AP"
   },
   {
     "name": "Nilah",
-    "attack": "Both",
+    "attack": "Ranged",
     "mana": true,
     "lane": ["Bot"],
     "damagetype": "AD"
@@ -1162,7 +1162,7 @@
     "damagetype": "AD"
   },
   {
-    "name": "Milo",
+    "name": "Milio",
     "attack": "Ranged",
     "mana": true,
     "lane": ["Support"],

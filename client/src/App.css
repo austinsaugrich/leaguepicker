@@ -214,7 +214,7 @@ body {
 .chosencontainer {
   display: flex;
   flex-direction: row;
-  max-width: 550px;
+  width: 600px;
   align-items: center;
   gap: 1em;
   padding: 1em;
@@ -227,6 +227,10 @@ body {
   top: 400px;
 }
 
+.imgdiv {
+  flex: 0.3;
+}
+
 .imgdiv img {
   width: 75px;
 }
@@ -236,9 +240,12 @@ body {
   flex-direction: column;
   gap: 1em;
   align-items: center;
+  flex: 2;
 }
 .middlediv button {
   width: 100px;
+  background-color: #a79461;
+  color: aliceblue;
 }
 
 .popup {
@@ -251,4 +258,9 @@ body {
 }
 .rightdiv {
   margin-bottom: 150px;
+  flex: 0.25;
+}
+.rightdiv button {
+  background-color: #a79461;
+  color: aliceblue;
 }
