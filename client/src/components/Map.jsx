@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import top from "../assets/top.png";
 import bot from "../assets/bot.png";
 import mid from "../assets/mid.png";

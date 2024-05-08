@@ -1,5 +1,4 @@
-import placeholder from "../assets/mid.png";
-
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 export default function ChampInfo({
   champname,

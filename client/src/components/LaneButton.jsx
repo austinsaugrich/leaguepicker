@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function LaneButton({ laneimg, lanename, onClickFunc }) {
   return (
     <div className={`lanebutton ${lanename}`}>
