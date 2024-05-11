@@ -67,12 +67,6 @@ export default function Home() {
             text='Completely Random'
             buttonname={"random"}
           />
-          {
-            <Button
-              text='Need League? Download here!'
-              buttonname={"download"}
-            />
-          }
           {SelectedChampion ? (
             <>
               <div className='popup'></div>
