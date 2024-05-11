@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Blacklist from "../components/Blacklist";
 import Button from "../components/Button";
 import ChampInfo from "../components/ChampInfo";
@@ -8,11 +8,14 @@ import axios from "axios";
 export default function Home() {
   const [SelectedChampion, setSelectedChampion] = useState("");
   const [SelectedFilters, setSelectedFilters] = useState([]);
+  const [BlacklistedChampions, setBlacklistedChampions] = useState([]);
   const [prefLane, setPrefLane] = useState("");
+
   async function grabChampion(lane) {
     const data = await axios.post("http://127.0.0.1:8000", {
       Lane: lane,
       Attributes: SelectedFilters,
+      Blacklist: BlacklistedChampions,
     });
     setSelectedChampion(data.data);
     if (lane) {
@@ -24,6 +27,15 @@ export default function Home() {
 
   function clearChamp() {
     setSelectedChampion("");
+  }
+
+  function blacklistedChampions(name) {
+    let blacklist = [...BlacklistedChampions];
+    if (blacklist.includes(name)) {
+      blacklist = blacklist.filter((f) => f !== name);
+    } else {
+      blacklist.push(name);
+    }
   }
 
   function updateFilters(e) {
@@ -77,7 +89,7 @@ export default function Home() {
           ) : null}
         </div>
         <div className='rightside'>
-          <Playable />
+          <Playable blacklist={blacklistedChampions} />
         </div>
       </div>
     </>

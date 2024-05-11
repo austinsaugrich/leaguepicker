@@ -264,3 +264,41 @@ body {
   background-color: #a79461;
   color: aliceblue;
 }
+
+.list {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.list img {
+  width: 35px;
+  margin-right: 0.5em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.champion-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.list li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}

@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+# for uvicorn
 origins = [
     "http://localhost:5173",
     "http://localhost"
@@ -21,17 +21,11 @@ app.add_middleware(
 )
 
 
-# class Champmodel(BaseModel):
-#     Lane: str | None = 'Top'
-#     Attacktype: str | None = 'Melee'
-#     Damagetype: str | None = "AD"
+# champ model
 class Champmodel(BaseModel):
     Lane: str | None = ''
     Attributes: list | None = []
-
-# champ = Champion()
-# print(champ.name)
-
+    Blacklist: list | None = []
 
 # functions to randomize champ selection
 
@@ -92,6 +86,8 @@ def load_champ(req):
                 continue
             if not get_mana(champ['mana'], req.Attributes):
                 continue
+            if champ["name"] in req.Blacklist:
+                continue
             filterchamps.append(champ)
         return filterchamps
 
@@ -101,3 +97,10 @@ def handler(req: Champmodel):
     champs = load_champ(req)
     id = random_champ(champs)
     return champs[id]
+
+
+@app.get('/champs')
+def getchamps():
+    with open('./leaguelist.json') as champs_file:
+        champs = json.load(champs_file)
+    return champs
