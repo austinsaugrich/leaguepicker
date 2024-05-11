@@ -115,12 +115,6 @@ export default function Blacklist({ handleChecked: propHandleChecked }) {
       {!isAnyManaChecked && (
         <p>Please select either Mana or No Mana or both.</p>
       )}
-      <div className='champsearch'>
-        <form action='#' className='champform'>
-          <input type='text' placeholder='Search for champion' name='search' />
-          <button>Add to blacklist</button>
-        </form>
-      </div>
       <div className='blacklistedchampions'>
         <h3>Champions Currently Blacklisted</h3>
         <div className='listofblacklisted'>

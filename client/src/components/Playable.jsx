@@ -8,7 +8,10 @@ export default function Playable({ blacklist }) {
   useEffect(() => {
     async function grabAllChampions() {
       const data = await axios.get("http://127.0.0.1:8000/champs", {});
-      setPlayableChampions(data.data);
+      const sortedChampions = data.data.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setPlayableChampions(sortedChampions);
     }
     grabAllChampions();
   }, []);
@@ -19,6 +22,7 @@ export default function Playable({ blacklist }) {
         .toLowerCase()
         .replace(/ /g, "")
         .replace(/'/g, "")
+        .replace(/&/g, "")
         .replace(/\./g, "")}.png?V3`;
     } else {
       return `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/monkeyking.png?V3`;
