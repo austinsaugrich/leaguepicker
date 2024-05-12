@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-export default function Blacklist({ handleChecked: propHandleChecked }) {
+export default function Blacklist({
+  handleChecked: propHandleChecked,
+  blacklistedChampions,
+  blacklist,
+}) {
   const [adChecked, setAdChecked] = useState(true);
   const [apChecked, setApChecked] = useState(false);
   const [rangedChecked, setRangedChecked] = useState(true);
@@ -117,9 +121,17 @@ export default function Blacklist({ handleChecked: propHandleChecked }) {
       )}
       <div className='blacklistedchampions'>
         <h3>Champions Currently Blacklisted</h3>
-        <div className='listofblacklisted'>
-          <h5>Aatrox</h5>
-          <h5>Ahri</h5>
+        <div className='list-container'>
+          <ul className='blacklist'>
+            {blacklistedChampions.sort().map((champion, index) => (
+              <li key={index}>
+                <span>{champion}</span>
+                <span>
+                  <button onClick={() => blacklist(champion)}>X</button>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

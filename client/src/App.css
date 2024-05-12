@@ -82,24 +82,60 @@ body {
   flex-direction: column;
 }
 
-.listofblacklisted {
-  overflow-y: auto;
-  max-width: 200px;
-  justify-content: center;
-  align-items: center;
-}
-
 .blacklistedchampions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid #a79461;
   gap: 0.5em;
+  padding: 0.5em;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blacklistedchampions .list-container {
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.blacklist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blacklist li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
   padding: 0.5em;
 }
 
-/* END OF BL COMPONENT */
-/* START OF LEAGUE MAP COMPONENT */
+.blacklist li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  width: 30px;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background-color: #0c131b;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background-color: #ff5261;
+  border-radius: 6px;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background-color: #a79461;
+}
+
 .mapcontainer {
   border: 5px solid black;
   justify-content: center;
@@ -265,7 +301,7 @@ body {
   background-color: #a79461;
   color: aliceblue;
 }
-
+/* playable champs */
 .list {
   overflow-y: scroll;
   display: flex;
@@ -320,3 +356,4 @@ ul {
   color: white;
   margin-left: auto;
 }
+/* end of playable */

@@ -36,6 +36,7 @@ export default function Home() {
     } else {
       blacklist.push(name);
     }
+    setBlacklistedChampions(blacklist);
   }
 
   function updateFilters(e) {
@@ -58,7 +59,11 @@ export default function Home() {
       </div>
       <div className='Container'>
         <div className='leftside'>
-          <Blacklist handleChecked={updateFilters} />
+          <Blacklist
+            handleChecked={updateFilters}
+            blacklistedChampions={BlacklistedChampions}
+            blacklist={blacklistedChampions}
+          />
         </div>
         <div className='main'>
           <LeagueMap onClickFunc={grabChampion} />

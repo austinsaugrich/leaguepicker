@@ -28,7 +28,6 @@ export default function Playable({ blacklist }) {
       return `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/monkeyking.png?V3`;
     }
   };
-
   return (
     <div className='playcontainer'>
       <h1>Playable Champions</h1>
