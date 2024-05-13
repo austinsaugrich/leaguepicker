@@ -17,14 +17,14 @@
     "name": "Akali",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Mid"],
+    "lane": ["Mid", "Top"],
     "damagetype": "AP"
   },
   {
     "name": "Akshan",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Mid"],
+    "lane": ["Mid", "Top", "Bot"],
     "damagetype": "AD"
   },
   {
@@ -94,7 +94,7 @@
     "name": "Bel'Veth",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Jungle"],
+    "lane": ["Jungle", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -108,7 +108,7 @@
     "name": "Brand",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Support", "Mid"],
+    "lane": ["Support", "Mid", "Jungle"],
     "damagetype": "AP"
   },
   {
@@ -129,21 +129,21 @@
     "name": "Camille",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
     "name": "Cassiopeia",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Mid"],
+    "lane": ["Mid", "Top"],
     "damagetype": "AP"
   },
   {
     "name": "Cho'Gath",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Jungle", "Support"],
+    "lane": ["Top"],
     "damagetype": "AP"
   },
   {
@@ -248,7 +248,7 @@
     "name": "Garen",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Jungle", "Mid"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -262,7 +262,7 @@
     "name": "Gragas",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Support", "Jungle"],
+    "lane": ["Top", "Mid", "Jungle"],
     "damagetype": "AP"
   },
   {
@@ -276,7 +276,7 @@
     "name": "Gwen",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top", "Jungle", "Mid"],
     "damagetype": "AP"
   },
   {
@@ -381,7 +381,7 @@
     "name": "Karthus",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Jungle", "Support", "Mid"],
+    "lane": ["Jungle", "Bot", "Mid"],
     "damagetype": "AP"
   },
   {
@@ -403,7 +403,7 @@
     "attack": "Ranged",
     "mana": true,
     "lane": ["Top", "Mid"],
-    "damagetype": "AD"
+    "damagetype": "AP"
   },
   {
     "name": "Kayn",
@@ -416,7 +416,7 @@
     "name": "Kennen",
     "attack": "Ranged",
     "mana": false,
-    "lane": ["Top"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AP"
   },
   {
@@ -514,7 +514,7 @@
     "name": "Malphite",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Mid", "Support"],
+    "lane": ["Top"],
     "damagetype": "AP"
   },
   {
@@ -528,7 +528,7 @@
     "name": "Maokai",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Jungle", "Support"],
+    "lane": ["Top", "Support"],
     "damagetype": "AP"
   },
   {
@@ -549,14 +549,14 @@
     "name": "Wukong",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top", "Jungle", "Bot"],
     "damagetype": "AD"
   },
   {
     "name": "Mordekaiser",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top"],
     "damagetype": "AP"
   },
   {
@@ -577,7 +577,7 @@
     "name": "Nasus",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -591,7 +591,7 @@
     "name": "Neeko",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Mid"],
+    "lane": ["Mid", "Support"],
     "damagetype": "AP"
   },
   {
@@ -647,7 +647,7 @@
     "name": "Pantheon",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Mid", "Support", "Top"],
+    "lane": ["Mid", "Top"],
     "damagetype": "AD"
   },
   {
@@ -661,7 +661,7 @@
     "name": "Pyke",
     "attack": "Melee",
     "mana": true,
-    "lane": ["Support"],
+    "lane": ["Support", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -717,7 +717,7 @@
     "name": "Renekton",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -780,7 +780,7 @@
     "name": "Senna",
     "attack": "Ranged",
     "mana": true,
-    "lane": ["Support"],
+    "lane": ["Support", "Bot"],
     "damagetype": "AD"
   },
   {
@@ -794,7 +794,7 @@
     "name": "Sett",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Support"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -808,7 +808,7 @@
     "name": "Shen",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top", "Mid"],
     "damagetype": "AD"
   },
   {
@@ -941,7 +941,7 @@
     "name": "Tryndamere",
     "attack": "Melee",
     "mana": false,
-    "lane": ["Top", "Jungle"],
+    "lane": ["Top"],
     "damagetype": "AD"
   },
   {

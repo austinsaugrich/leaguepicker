@@ -362,3 +362,30 @@ ul {
   margin-left: auto;
 }
 /* end of playable */
+@media screen and (max-width: 850px) {
+  .Container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftside,
+  .rightside {
+    margin-bottom: 2em;
+  }
+
+  .playcontainer,
+  .BlacklistContainer {
+    width: 90%;
+    max-width: 90%;
+    margin-bottom: 2em;
+  }
+
+  .chosencontainer {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .Main {
+    padding: 1em;
+  }
+}
