@@ -1,13 +1,10 @@
 * {
   margin: 0;
 }
-
 body {
   background-color: #0c131b;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-
 /* main page css */
 .Container {
   display: flex;
@@ -18,14 +15,7 @@ body {
   gap: 1em;
 }
 
-.leftside,
-.rightside,
-.main {
-  flex: 1;
-}
-
-.leftside,
-.rightside {
+.leftside {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +37,13 @@ body {
   border-bottom: 5px solid #ff5261;
   color: azure;
   justify-content: center;
-  width: 100bw;
+  width: 100%;
+}
+
+.rightside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* end of main page css */
@@ -191,11 +187,9 @@ body {
 .lanebutton button {
   transition: transform 0.3s ease-in-out;
 }
-
 .lanebutton button:hover {
   transform: scale(1.2);
 }
-
 .Top {
   left: 33%;
   top: 13%;
@@ -223,21 +217,20 @@ body {
 
 /* END OF LEAGUE MAP COMPONENT */
 /* bottom buttons */
-.download,
+.download {
+  background-color: #ff5261;
+  padding: 0.3em;
+  border: 5px solid #1a688d;
+  color: azure;
+}
+
 .random {
   background-color: #ff5261;
   padding: 1em;
+  width: 350px;
   border: 5px solid #1a688d;
   color: azure;
-  width: 100%;
-  text-align: center;
 }
-
-.random {
-  width: 350px;
-  font-size: medium;
-}
-
 /* end of bottom buttons */
 /* LEFT SIDE */
 .playcontainer {
@@ -258,8 +251,8 @@ body {
 /* Modal */
 .chosencontainer {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
+  width: 600px;
   align-items: center;
   gap: 1em;
   padding: 1em;
@@ -270,6 +263,10 @@ body {
   z-index: 9999 !important;
   position: absolute;
   top: 400px;
+}
+
+.chosencontainer a {
+  color: #ff5261;
 }
 
 .imgdiv {
@@ -287,7 +284,6 @@ body {
   align-items: center;
   flex: 2;
 }
-
 .middlediv button {
   width: 100px;
   background-color: #a79461;
@@ -302,12 +298,10 @@ body {
   opacity: 95%;
   position: absolute;
 }
-
 .rightdiv {
   margin-bottom: 150px;
   flex: 0.25;
 }
-
 .rightdiv button {
   background-color: #a79461;
   color: aliceblue;
@@ -368,32 +362,3 @@ ul {
   margin-left: auto;
 }
 /* end of playable */
-
-/* Media Queries */
-@media screen and (max-width: 850px) {
-  .Container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .leftside,
-  .rightside {
-    margin-bottom: 2em;
-  }
-
-  .playcontainer,
-  .BlacklistContainer {
-    width: 90%;
-    max-width: 90%;
-    margin-bottom: 2em;
-  }
-
-  .chosencontainer {
-    width: 90%;
-    max-width: 90%;
-  }
-
-  .Main {
-    padding: 1em;
-  }
-}

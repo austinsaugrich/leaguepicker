@@ -10,6 +10,17 @@ export default function Home() {
   const [SelectedFilters, setSelectedFilters] = useState([]);
   const [BlacklistedChampions, setBlacklistedChampions] = useState([]);
   const [prefLane, setPrefLane] = useState("");
+  const [playableChampions, setPlayableChampions] = useState([]);
+
+  async function grabAllChampions() {
+    const data = await axios.get("http://127.0.0.1:8000/champs", {});
+
+    setPlayableChampions(sortChamps(data.data));
+  }
+
+  function sortChamps(data) {
+    return data.sort((a, b) => a.name.localeCompare(b.name));
+  }
 
   async function grabChampion(lane) {
     const data = await axios.post("http://127.0.0.1:8000", {
@@ -25,18 +36,33 @@ export default function Home() {
     }
   }
 
+  async function grabOneChampion(name) {
+    const data = await axios.get(`http://127.0.0.1:8000/champ/${name}`);
+    return data.data;
+  }
+
   function clearChamp() {
     setSelectedChampion("");
   }
 
   function blacklistedChampions(name) {
     let blacklist = [...BlacklistedChampions];
+    if (!blacklist.includes(name)) {
+      blacklist.push(name);
+      setBlacklistedChampions(blacklist);
+    }
+  }
+
+  async function unBlacklistedChampions(name) {
+    let blacklist = [...BlacklistedChampions];
+    let playable = [...playableChampions];
     if (blacklist.includes(name)) {
       blacklist = blacklist.filter((f) => f !== name);
-    } else {
-      blacklist.push(name);
+      setBlacklistedChampions(blacklist);
+      const champ = await grabOneChampion(name);
+      playable.push(champ);
+      setPlayableChampions(sortChamps(playable));
     }
-    setBlacklistedChampions(blacklist);
   }
 
   function updateFilters(e) {
@@ -62,7 +88,7 @@ export default function Home() {
           <Blacklist
             handleChecked={updateFilters}
             blacklistedChampions={BlacklistedChampions}
-            blacklist={blacklistedChampions}
+            blacklist={unBlacklistedChampions}
           />
         </div>
         <div className='main'>
@@ -88,7 +114,12 @@ export default function Home() {
           ) : null}
         </div>
         <div className='rightside'>
-          <Playable blacklist={blacklistedChampions} />
+          <Playable
+            blacklist={blacklistedChampions}
+            playableChampions={playableChampions}
+            grabAllChampions={grabAllChampions}
+            setPlayableChampions={setPlayableChampions}
+          />
         </div>
       </div>
     </>

@@ -104,3 +104,12 @@ def getchamps():
     with open('./leaguelist.json') as champs_file:
         champs = json.load(champs_file)
     return champs
+
+
+@app.get("/champ/{name}")
+def getchamp(name):
+    with open('./leaguelist.json') as champs_file:
+        champs = json.load(champs_file)
+    for champ in champs:
+        if champ['name'] == name:
+            return champ

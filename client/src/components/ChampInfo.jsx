@@ -11,8 +11,22 @@ export default function ChampInfo({
 }) {
   const [imgurl, SetImgUrl] = useState("");
   const [lanes, Setlanes] = useState("");
+  const [moba, setMoba] = useState("");
+  function getUrl(name) {
+    return `https://mobalytics.gg/lol/champions/${name}/build`;
+  }
   useEffect(() => {
-    if (champname !== "Wukong") {
+    if (champname == "Wukong") {
+      SetImgUrl(
+        `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/monkeyking.png?V3`
+      );
+      setMoba(getUrl("monkeyking"));
+    } else if (champname == "Nunu & Willump") {
+      SetImgUrl(
+        `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/nunu.png?V3`
+      );
+      setMoba(getUrl("nunu"));
+    } else {
       SetImgUrl(
         `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/${champname
           .toLowerCase()
@@ -20,9 +34,14 @@ export default function ChampInfo({
           .replace(/'/g, "")
           .replace(/\./g, "")}.png?V3`
       );
-    } else {
-      SetImgUrl(
-        `https://cdn.mobalytics.gg/assets/lol/images/dd/champions/icons/monkeyking.png?V3`
+      setMoba(
+        getUrl(
+          champname
+            .toLowerCase()
+            .replace(/ /g, "")
+            .replace(/'/g, "")
+            .replace(/\./g, "")
+        )
       );
     }
 
@@ -47,6 +66,9 @@ export default function ChampInfo({
         <p>
           Their attack type is {attacktype} and they are {attack}
         </p>
+        <a href={moba} target='_blank'>
+          View build here!
+        </a>
         <button onClick={() => rerollfunc(lanepref)}>Re-roll</button>
       </div>
       <div className='rightdiv'>
