@@ -55,7 +55,8 @@ body {
   align-items: center;
   gap: 1em;
   padding: 1em;
-  height: 550px;
+  min-height: 550px;
+  max-height: 800px;
   border: 4px solid #ff5261;
   border-radius: 5%;
   background-color: #14222f;
