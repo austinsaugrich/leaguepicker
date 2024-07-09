@@ -13,7 +13,7 @@ export default function Home() {
   const [playableChampions, setPlayableChampions] = useState([]);
 
   async function grabAllChampions() {
-    const data = await axios.get("http://127.0.0.1:8000/champs", {});
+    const data = await axios.get("http://127.0.0.1:8888/champs", {});
 
     setPlayableChampions(sortChamps(data.data));
   }
@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   async function grabChampion(lane) {
-    const data = await axios.post("http://127.0.0.1:8000", {
+    const data = await axios.post("http://127.0.0.1:8888", {
       Lane: lane,
       Attributes: SelectedFilters,
       Blacklist: BlacklistedChampions,
@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   async function grabOneChampion(name) {
-    const data = await axios.get(`http://127.0.0.1:8000/champ/${name}`);
+    const data = await axios.get(`http://127.0.0.1:8888/champ/${name}`);
     return data.data;
   }
 
