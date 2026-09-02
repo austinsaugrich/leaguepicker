@@ -24,22 +24,32 @@ Open <http://localhost:8008>. That's it — no second terminal, no Python.
 
 ## Deploying
 
-It builds to plain static files, and there is only one route, so no SPA
-rewrite rules are needed.
+Deployed as a Cloudflare Worker serving static assets — there is no
+server-side code, so `wrangler.jsonc` has no `main` entry point and simply
+points at the Vite build.
+
+From the repo root:
 
 ```bash
-cd client && npm run build
+npm run build && npx wrangler deploy
 ```
 
-Point any static host at `client/` with build command `npm run build` and
-output directory `dist`. Cloudflare Pages and Netlify both work on their free
-tiers; Cloudflare's bandwidth is unmetered, which is the reason to prefer it if
-this ever gets linked somewhere busy.
+Connected to Cloudflare's dashboard, the only setting that matters is:
+
+| Setting | Value |
+| ------- | ----- |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` (the default) |
+| Root directory | leave at the repo root |
+
+Both the build and the Wrangler config live at the root and reach into
+`client/`, so the defaults work without touching Advanced settings. A correct
+deploy logs `Read 11 files`; if it logs 46, the build command didn't run and
+Wrangler is uploading source instead of the bundle.
 
 `client/.node-version` pins Node 22 because Vite 7 needs Node 20.19+ and some
-hosts still default to 18.
-
-The whole payload is ~561 KB, of which 202 KB is the map.
+hosts still default to 18. The whole payload is ~561 KB, of which 202 KB is
+the map.
 
 ## How the picking works
 

@@ -1,0 +1,15 @@
+{
+  // Static-asset-only Worker: no server-side code, no "main" entry point.
+  // Cloudflare serves the Vite build straight from the edge.
+  //
+  // This lives at the repo root, not in client/, because Cloudflare's build
+  // runs its deploy command from the root by default.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "leaguepicker",
+  "compatibility_date": "2026-09-02",
+  "assets": {
+    "directory": "./client/dist",
+    // Single page, no router: serve index.html instead of a 404.
+    "not_found_handling": "single-page-application"
+  }
+}

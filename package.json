@@ -1,0 +1,13 @@
+{
+  "name": "leaguepicker",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Random League of Legends champion picker",
+  "scripts": {
+    "build": "npm --prefix client ci && npm --prefix client run build",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.128.0"
+  }
+}
