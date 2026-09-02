@@ -4,6 +4,7 @@ import ChampionList from "../components/ChampionList";
 import ChampionModal from "../components/ChampionModal";
 import FilterPanel from "../components/FilterPanel";
 import Header from "../components/Header";
+import LaneSelector from "../components/LaneSelector";
 import LeagueMap from "../components/Map";
 import { useDDragonVersion } from "../hooks/useDDragonVersion";
 import { fetchChampions, rollChampion } from "../lib/api";
@@ -105,8 +106,7 @@ export default function Home() {
 
       {loadError && (
         <div className="banner banner--error" role="alert">
-          Couldn&rsquo;t reach the champion API: {loadError}. Is the FastAPI
-          server running on port 8888?
+          Couldn&rsquo;t load the champion roster: {loadError}
         </div>
       )}
 
@@ -127,10 +127,12 @@ export default function Home() {
 
         <div className="layout__col layout__col--center">
           <p className="map-caption">
-            Pick a lane on the Rift, or roll across every role.
+            Pick a lane, or roll across every role.
           </p>
 
           <LeagueMap onClickFunc={roll} disabled={rolling || poolEmpty} />
+
+          <LaneSelector onSelect={roll} disabled={rolling || poolEmpty} />
 
           <button
             type="button"

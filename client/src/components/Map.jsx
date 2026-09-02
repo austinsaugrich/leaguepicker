@@ -1,18 +1,6 @@
-import top from "../assets/top.webp";
-import bot from "../assets/bot.webp";
-import mid from "../assets/mid.webp";
-import jg from "../assets/jng.webp";
-import sup from "../assets/support.webp";
 import leaguemap from "../assets/rift-map.webp";
+import { LANES } from "../lib/lanes";
 import LaneButton from "./LaneButton";
-
-const LANES = [
-  { name: "Top", icon: top },
-  { name: "Jungle", icon: jg },
-  { name: "Mid", icon: mid },
-  { name: "Bot", icon: bot },
-  { name: "Support", icon: sup },
-];
 
 export default function LeagueMap({ onClickFunc, disabled }) {
   return (

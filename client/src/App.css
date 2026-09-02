@@ -521,6 +521,59 @@
   top: 62.8%;
 }
 
+/* Lane selector (touch) ----------------------------------------------------- */
+
+/* Hidden by default: the map hotspots are the desktop affordance. */
+.lane-selector {
+  display: none;
+  width: 100%;
+  max-width: 660px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.lane-selector__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 68px;
+  padding: 0.6rem 0.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--navy-600);
+  background: rgb(16 42 65 / 45%);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.lane-selector__item img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.lane-selector__item span {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lane-selector__item:hover:not(:disabled),
+.lane-selector__item:active:not(:disabled) {
+  border-color: var(--gold-500);
+  color: var(--gold-100);
+  background: rgb(200 170 110 / 15%);
+}
+
+.lane-selector__item:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+
 /* Buttons ------------------------------------------------------------------ */
 
 .button {
@@ -798,21 +851,16 @@
     padding: 0.85rem 1rem;
   }
 
-  /* Smaller markers so the five lanes stay distinct on a narrow map. */
-  .lane-button button {
-    width: 38px;
-    height: 38px;
-    box-shadow: 0 0 0 3px rgb(1 10 19 / 55%), 0 0 12px rgb(200 170 110 / 35%);
+  /* Touch has no hover, so the map's hover-only labels would leave five
+     unlabelled icons. Below this width the map becomes decorative and the
+     labelled selector takes over. */
+  .map-frame .lane-button {
+    display: none;
   }
 
-  .lane-button button img {
-    width: 19px;
-    height: 19px;
+  .lane-selector {
+    display: grid;
   }
-
-  /* Labels stay hover-only — five of them at once overlap on a narrow map.
-     The icons are the standard position icons and each button is labelled
-     for screen readers. */
 
   .modal__art {
     height: 180px;

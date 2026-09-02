@@ -1,5 +1,3 @@
-export const LANES = ["Top", "Jungle", "Mid", "Bot", "Support"];
-
 export const FILTER_GROUPS = [
   {
     id: "damage",
