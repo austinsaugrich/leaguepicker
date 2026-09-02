@@ -654,6 +654,26 @@
   border: 1px solid var(--amber);
 }
 
+/* Footer ------------------------------------------------------------------- */
+
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.75rem 3rem;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+.site-footer p + p {
+  margin-top: 0.5rem;
+}
+
+.site-footer__meta {
+  opacity: 0.75;
+}
+
 /* Modal -------------------------------------------------------------------- */
 
 .modal-backdrop {

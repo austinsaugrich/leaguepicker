@@ -3,6 +3,7 @@ import BlacklistPanel from "../components/BlacklistPanel";
 import ChampionList from "../components/ChampionList";
 import ChampionModal from "../components/ChampionModal";
 import FilterPanel from "../components/FilterPanel";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LaneSelector from "../components/LaneSelector";
 import LeagueMap from "../components/Map";
@@ -166,6 +167,8 @@ export default function Home() {
           />
         </div>
       </main>
+
+      <Footer />
 
       {rolled && (
         <ChampionModal

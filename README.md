@@ -55,21 +55,39 @@ change when the backend went away.
 
 ## Data
 
-`client/src/data/champions.json` is the source of truth:
+`client/src/data/champions.json` is the source of truth — 173 champions:
 
 ```json
 {
   "name": "Kayle",
-  "attack": "Ranged",
+  "attack": "Melee",
   "mana": true,
-  "lane": ["Top", "Mid"],
-  "damagetype": "AD, AP"
+  "lane": ["Top"],
+  "damagetype": "AD"
 }
 ```
 
-`mana: false` covers every non-mana resource (energy, fury, rage, and the
-genuinely resourceless). `damagetype` may name both types for hybrids and is
-normalised to a list when loaded.
+**Attributes** come from Riot's own data and shouldn't be hand-edited:
+
+- `attack` — CommunityDragon `tacticalInfo.attackType`. This is Riot's
+  classification, which occasionally surprises: Kayle is Melee (she gains
+  range at 6) and Lillia is Melee despite her reach.
+- `damagetype` — CommunityDragon `tacticalInfo.damageType`
+  (`kPhysical`/`kMagic`/`kMixed`). Hybrids are written `"AD, AP"` and split
+  into a list when loaded.
+- `mana` — Data Dragon `partype == "Mana"`. `false` covers every other
+  resource: energy, fury, rage, and the genuinely resourceless.
+
+**Lanes** are a snapshot of the U.GG tier lists (patch 26.17, Emerald+): a
+champion is listed in every lane where it ranks **B or higher**. Because tier
+measures strength on the current patch rather than where a champion is
+actually played, 30 champions had no B+ lane at all — Caitlyn, Ezreal and Lee
+Sin among them. Those keep their single best-rated lane so that every champion
+stays rollable. Ties are broken by class: a tied marksman goes Bot, a tied
+enchanter goes Support.
+
+This means lanes drift as the meta moves. Re-scrape the five U.GG tier lists
+when it starts to feel stale; the attribute fields don't need touching.
 
 To add a champion, add an entry and redeploy. Champion portraits and splash art
 come from Riot's Data Dragon CDN; build links point at Mobalytics.
