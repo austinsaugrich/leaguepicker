@@ -1,127 +1,180 @@
-import { useEffect, useState } from "react";
-import Blacklist from "../components/Blacklist";
-import Button from "../components/Button";
-import ChampInfo from "../components/ChampInfo";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import BlacklistPanel from "../components/BlacklistPanel";
+import ChampionList from "../components/ChampionList";
+import ChampionModal from "../components/ChampionModal";
+import FilterPanel from "../components/FilterPanel";
+import Header from "../components/Header";
 import LeagueMap from "../components/Map";
-import Playable from "../components/Playable";
-import axios from "axios";
+import { useDDragonVersion } from "../hooks/useDDragonVersion";
+import { fetchChampions, rollChampion } from "../lib/api";
+import { matchesFilters } from "../lib/filters";
+
 export default function Home() {
-  const [SelectedChampion, setSelectedChampion] = useState("");
-  const [SelectedFilters, setSelectedFilters] = useState([]);
-  const [BlacklistedChampions, setBlacklistedChampions] = useState([]);
-  const [prefLane, setPrefLane] = useState("");
-  const [playableChampions, setPlayableChampions] = useState([]);
+  const [champions, setChampions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
 
-  async function grabAllChampions() {
-    const data = await axios.get("http://127.0.0.1:8888/champs", {});
+  const [filters, setFilters] = useState([]);
+  const [blacklist, setBlacklist] = useState([]);
 
-    setPlayableChampions(sortChamps(data.data));
-  }
+  const [rolled, setRolled] = useState(null);
+  const [lanePref, setLanePref] = useState("");
+  const [rolling, setRolling] = useState(false);
+  const [rollError, setRollError] = useState("");
 
-  function sortChamps(data) {
-    return data.sort((a, b) => a.name.localeCompare(b.name));
-  }
+  const version = useDDragonVersion();
 
-  async function grabChampion(lane) {
-    const data = await axios.post("http://127.0.0.1:8888", {
-      Lane: lane,
-      Attributes: SelectedFilters,
-      Blacklist: BlacklistedChampions,
-    });
-    setSelectedChampion(data.data);
-    if (lane) {
-      setPrefLane(lane);
-    } else {
-      setPrefLane("");
-    }
-  }
+  useEffect(() => {
+    let active = true;
 
-  async function grabOneChampion(name) {
-    const data = await axios.get(`http://127.0.0.1:8888/champ/${name}`);
-    return data.data;
-  }
+    fetchChampions()
+      .then((data) => {
+        if (active) setChampions(data);
+      })
+      .catch((error) => {
+        if (active) setLoadError(error.message);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
 
-  function clearChamp() {
-    setSelectedChampion("");
-  }
+    return () => {
+      active = false;
+    };
+  }, []);
 
-  function blacklistedChampions(name) {
-    let blacklist = [...BlacklistedChampions];
-    if (!blacklist.includes(name)) {
-      blacklist.push(name);
-      setBlacklistedChampions(blacklist);
-    }
-  }
+  // The roster and the blacklist are derived from one source of truth, so a
+  // champion can never end up in both lists or neither.
+  const banned = useMemo(() => new Set(blacklist), [blacklist]);
+  const available = useMemo(
+    () => champions.filter((champ) => !banned.has(champ.name)),
+    [champions, banned]
+  );
 
-  async function unBlacklistedChampions(name) {
-    let blacklist = [...BlacklistedChampions];
-    let playable = [...playableChampions];
-    if (blacklist.includes(name)) {
-      blacklist = blacklist.filter((f) => f !== name);
-      setBlacklistedChampions(blacklist);
-      const champ = await grabOneChampion(name);
-      playable.push(champ);
-      setPlayableChampions(sortChamps(playable));
-    }
-  }
+  // Pool the next roll would draw from, ignoring lane (lane is chosen per click).
+  const pool = useMemo(
+    () => available.filter((champ) => matchesFilters(champ, filters)),
+    [available, filters]
+  );
 
-  function updateFilters(e) {
-    const value = e.target.value;
+  const toggleFilter = useCallback((value) => {
+    setFilters((current) =>
+      current.includes(value)
+        ? current.filter((f) => f !== value)
+        : [...current, value]
+    );
+  }, []);
 
-    let filters = [...SelectedFilters];
-    if (filters.includes(value)) {
-      filters = filters.filter((f) => f !== value);
-    } else {
-      filters.push(value);
-    }
+  const addToBlacklist = useCallback((name) => {
+    setBlacklist((current) =>
+      current.includes(name) ? current : [...current, name]
+    );
+  }, []);
 
-    setSelectedFilters(filters);
-  }
+  const removeFromBlacklist = useCallback((name) => {
+    setBlacklist((current) => current.filter((n) => n !== name));
+  }, []);
+
+  const roll = useCallback(
+    async (lane = "") => {
+      setRolling(true);
+      setRollError("");
+      try {
+        const champ = await rollChampion({
+          lane,
+          attributes: filters,
+          blacklist,
+        });
+        setRolled(champ);
+        setLanePref(lane);
+      } catch (error) {
+        setRollError(error.message);
+        setRolled(null);
+      } finally {
+        setRolling(false);
+      }
+    },
+    [filters, blacklist]
+  );
+
+  const poolEmpty = pool.length === 0 && !loading && !loadError;
 
   return (
     <>
-      <div className='header'>
-        <h1>League of Legends randomized champ selector</h1>
-      </div>
-      <div className='Container'>
-        <div className='leftside'>
-          <Blacklist
-            handleChecked={updateFilters}
-            blacklistedChampions={BlacklistedChampions}
-            blacklist={unBlacklistedChampions}
+      <Header poolSize={pool.length} totalSize={champions.length} />
+
+      {loadError && (
+        <div className="banner banner--error" role="alert">
+          Couldn&rsquo;t reach the champion API: {loadError}. Is the FastAPI
+          server running on port 8888?
+        </div>
+      )}
+
+      <main className="layout">
+        <div className="layout__col layout__col--left">
+          <FilterPanel
+            filters={filters}
+            onToggle={toggleFilter}
+            onReset={() => setFilters([])}
+          />
+          <BlacklistPanel
+            blacklist={blacklist}
+            onRestore={removeFromBlacklist}
+            onClear={() => setBlacklist([])}
+            version={version}
           />
         </div>
-        <div className='main'>
-          <LeagueMap onClickFunc={grabChampion} />
-          <Button
-            onClickFunc={grabChampion}
-            text='Completely Random'
-            buttonname={"random"}
-          />
-          {SelectedChampion ? (
-            <>
-              <div className='popup'></div>
-              <ChampInfo
-                closefunc={clearChamp}
-                champname={SelectedChampion.name}
-                lanename={SelectedChampion.lane}
-                attacktype={SelectedChampion.damagetype}
-                attack={SelectedChampion.attack}
-                rerollfunc={grabChampion}
-                lanepref={prefLane}
-              />
-            </>
-          ) : null}
+
+        <div className="layout__col layout__col--center">
+          <p className="map-caption">
+            Pick a lane on the Rift, or roll across every role.
+          </p>
+
+          <LeagueMap onClickFunc={roll} disabled={rolling || poolEmpty} />
+
+          <button
+            type="button"
+            className="button button--primary button--wide"
+            onClick={() => roll("")}
+            disabled={rolling || poolEmpty}
+          >
+            {rolling ? "Rolling…" : "Completely random"}
+          </button>
+
+          {poolEmpty && (
+            <p className="banner banner--warn" role="status">
+              No champion matches these filters. Loosen them or restore someone
+              from the blacklist.
+            </p>
+          )}
+
+          {rollError && !poolEmpty && (
+            <p className="banner banner--error" role="alert">
+              {rollError}
+            </p>
+          )}
         </div>
-        <div className='rightside'>
-          <Playable
-            blacklist={blacklistedChampions}
-            playableChampions={playableChampions}
-            grabAllChampions={grabAllChampions}
-            setPlayableChampions={setPlayableChampions}
+
+        <div className="layout__col layout__col--right">
+          <ChampionList
+            champions={available}
+            onBlacklist={addToBlacklist}
+            loading={loading}
+            version={version}
           />
         </div>
-      </div>
+      </main>
+
+      {rolled && (
+        <ChampionModal
+          champion={rolled}
+          lanePref={lanePref}
+          onClose={() => setRolled(null)}
+          onReroll={roll}
+          rolling={rolling}
+          version={version}
+        />
+      )}
     </>
   );
 }

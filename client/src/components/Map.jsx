@@ -1,25 +1,32 @@
-/* eslint-disable react/prop-types */
-import top from "../assets/top.png";
-import bot from "../assets/bot.png";
-import mid from "../assets/mid.png";
-import jg from "../assets/jng.png";
-import sup from "../assets/support.png";
-import leaguemap from "../assets/player-guide-map-1440-188809182d83442d64221ad0bdd7435a.png";
+import top from "../assets/top.webp";
+import bot from "../assets/bot.webp";
+import mid from "../assets/mid.webp";
+import jg from "../assets/jng.webp";
+import sup from "../assets/support.webp";
+import leaguemap from "../assets/rift-map.webp";
 import LaneButton from "./LaneButton";
 
-export default function LeagueMap({ onClickFunc }) {
+const LANES = [
+  { name: "Top", icon: top },
+  { name: "Jungle", icon: jg },
+  { name: "Mid", icon: mid },
+  { name: "Bot", icon: bot },
+  { name: "Support", icon: sup },
+];
+
+export default function LeagueMap({ onClickFunc, disabled }) {
   return (
-    <div className='mapcontainer'>
-      <img width='800' src={leaguemap} alt='leaguemap' />
-      <LaneButton onClickFunc={onClickFunc} laneimg={top} lanename={"Top"} />
-      <LaneButton onClickFunc={onClickFunc} laneimg={mid} lanename={"Mid"} />
-      <LaneButton onClickFunc={onClickFunc} laneimg={jg} lanename={"Jungle"} />
-      <LaneButton onClickFunc={onClickFunc} laneimg={bot} lanename={"Bot"} />
-      <LaneButton
-        onClickFunc={onClickFunc}
-        laneimg={sup}
-        lanename={"Support"}
-      />
+    <div className="map-frame">
+      <img className="map-frame__image" src={leaguemap} alt="Summoner's Rift" />
+      {LANES.map(({ name, icon }) => (
+        <LaneButton
+          key={name}
+          onClickFunc={onClickFunc}
+          laneimg={icon}
+          lanename={name}
+          disabled={disabled}
+        />
+      ))}
     </div>
   );
 }

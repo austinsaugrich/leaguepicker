@@ -1,3 +1,150 @@
+/* Design tokens + reset ---------------------------------------------------- */
+
+:root {
+  /* Hextech palette */
+  --void: #010a13;
+  --navy-900: #061420;
+  --navy-800: #0a1a2b;
+  --navy-700: #102a41;
+  --navy-600: #1b3a56;
+
+  --gold-100: #f0e6d2;
+  --gold-300: #d9c08d;
+  --gold-500: #c8aa6e;
+  --gold-700: #785a28;
+  --gold-900: #463714;
+
+  --teal: #0ac8b9;
+  --teal-dim: #0a7f78;
+  --crimson: #d5443f;
+  --amber: #e0a33e;
+
+  --text: #f0e6d2;
+  --text-dim: #a09b8c;
+  --text-faint: #6b6558;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 14px;
+
+  --shadow-panel: 0 10px 40px rgb(0 0 0 / 55%);
+  --shadow-glow: 0 0 24px rgb(200 170 110 / 18%);
+
+  --font-display: "Cinzel", "Georgia", "Times New Roman", serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --header-height: 88px;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--void);
+  /* Layered glows so the flat navy reads as depth rather than a slab. */
+  background-image:
+    radial-gradient(
+      ellipse 900px 600px at 50% -10%,
+      rgb(10 200 185 / 10%),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 700px 500px at 8% 20%,
+      rgb(200 170 110 / 8%),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 700px 500px at 92% 75%,
+      rgb(120 90 40 / 12%),
+      transparent 60%
+    );
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: var(--gold-300);
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Shared scrollbar treatment */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-700) transparent;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: rgb(0 0 0 / 30%);
+  border-radius: 4px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background: var(--gold-700);
+  border-radius: 4px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

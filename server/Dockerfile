@@ -1,13 +1,15 @@
-FROM python:latest AS Production 
+FROM python:3.12-slim
 
-ENV NODE_ENV=production
+WORKDIR /app
 
-WORKDIR /Desktop/backend
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
-COPY . . 
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install fastapi
+COPY . .
 
-EXPOSE 8000
+EXPOSE 8888
 
-CMD ["sh", "-c", "python -m uvicorn main:app --reload --host 0.0.0.0"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8888"]

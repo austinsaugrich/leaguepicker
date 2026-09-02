@@ -1,392 +1,824 @@
-* {
-  margin: 0;
-}
-body {
-  background-color: #0c131b;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-/* main page css */
-.Container {
-  display: flex;
-  min-height: 100vh;
-  justify-content: space-around;
-  padding-left: 2em;
-  padding-right: 2em;
-  gap: 1em;
+/* Header ------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    rgb(6 20 32 / 96%),
+    rgb(6 20 32 / 88%)
+  );
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gold-700);
+  box-shadow: 0 2px 24px rgb(0 0 0 / 60%);
 }
 
-.leftside {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3em;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  height: fit-content;
-  background-color: #14222f;
-  border-bottom: 5px solid #ff5261;
-  color: azure;
-  justify-content: center;
-  width: 100%;
-}
-
-.rightside {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* end of main page css */
-/* BLACKLISTED COMPONENT */
-.BlacklistContainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
-  align-items: center;
-  gap: 1em;
-  padding: 1em;
-  min-height: 550px;
-  max-height: 800px;
-  border: 4px solid #ff5261;
-  border-radius: 5%;
-  background-color: #14222f;
-  color: azure;
-  margin-bottom: 5em;
-}
-
-.radioButtons {
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-.radiorow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 125px;
-}
-
-.champform {
-  display: flex;
-  flex-direction: column;
-}
-
-.blacklistedchampions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5em;
-  padding: 0.5em;
-  height: 200px;
-  overflow: hidden;
-}
-
-.blacklistedchampions .list-container {
-  overflow-y: scroll;
-  flex: 1;
-}
-
-.blacklist {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.blacklist li {
+.site-header__inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1em;
-  padding: 0.5em;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.blacklist li button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: white;
-  width: 30px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.list-container::-webkit-scrollbar {
-  width: 12px;
+/* Hextech diamond built from borders — no image needed. */
+.brand__mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 2px solid var(--gold-500);
+  transform: rotate(45deg);
+  background: linear-gradient(
+    135deg,
+    rgb(10 200 185 / 35%),
+    rgb(200 170 110 / 25%)
+  );
+  box-shadow: var(--shadow-glow), inset 0 0 12px rgb(10 200 185 / 30%);
 }
 
-.list-container::-webkit-scrollbar-track {
-  background-color: #0c131b;
+.brand__text h1 {
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  background: linear-gradient(180deg, var(--gold-100), var(--gold-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.list-container::-webkit-scrollbar-thumb {
-  background-color: #ff5261;
-  border-radius: 6px;
+.brand__text p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
 }
 
-.list-container::-webkit-scrollbar-thumb:hover {
-  background-color: #a79461;
+.pool-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--gold-700);
+  border-radius: var(--radius);
+  background: rgb(16 42 65 / 55%);
 }
 
-.mapcontainer {
-  border: 5px solid black;
-  justify-content: center;
-  background-color: black;
-  max-height: 650px;
-  border-radius: 30%;
+.pool-badge__count {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.pool-badge__label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+/* Layout ------------------------------------------------------------------- */
+
+.layout {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr) minmax(280px, 340px);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.layout__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.layout__col--center {
+  align-items: center;
+  gap: 1.25rem;
+  position: sticky;
+  top: calc(var(--header-height) + 1.5rem);
+}
+
+/* Panels ------------------------------------------------------------------- */
+
+.panel {
   position: relative;
+  padding: 1.35rem;
+  background: linear-gradient(
+    160deg,
+    rgb(10 26 43 / 92%),
+    rgb(6 20 32 / 92%)
+  );
+  border: 1px solid var(--navy-600);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.lanebutton {
-  z-index: 9998 !important;
+/* Gold corner brackets, the League client's signature framing. */
+.panel::before,
+.panel::after {
+  content: "";
   position: absolute;
-  top: 0px;
-  left: 0px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gold-500);
+  opacity: 0.75;
+  pointer-events: none;
 }
 
-.lanebutton button {
+.panel::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: var(--radius-lg);
+}
+
+.panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.panel--grow {
+  flex: 1;
+  min-height: 0;
+}
+
+.panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--navy-700);
+}
+
+.panel__head h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-100);
+}
+
+.panel__hint {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+  margin-top: -0.35rem;
+}
+
+.count-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--navy-700);
+  border: 1px solid var(--navy-600);
+  color: var(--text-dim);
+}
+
+.empty-state {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+  padding: 1.25rem 0.25rem;
+  text-align: center;
+}
+
+/* Filter chips ------------------------------------------------------------- */
+
+.filter-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.filter-group {
   border: none;
-  cursor: pointer;
-  appearance: none;
-  background: linear-gradient(-45deg, #1a688d, #4b2041, #1a688d, #4b2041);
-  background-size: 200% 100%;
-  animation: animateBg 15s infinite linear;
-  border-radius: 50%;
-  border: 2px solid #a79461;
-}
-
-@keyframes animateBg {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.lanebutton button img {
-  width: 30px;
-  padding: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lanebutton button {
-  transition: transform 0.3s ease-in-out;
-}
-.lanebutton button:hover {
-  transform: scale(1.2);
-}
-.Top {
-  left: 33%;
-  top: 13%;
-}
-
-.Mid {
-  left: 49%;
-  top: 33%;
-}
-
-.Bot {
-  left: 70%;
-  top: 50%;
-}
-
-.Support {
-  left: 75%;
-  top: 60%;
-}
-
-.Jungle {
-  left: 48%;
-  top: 19%;
-}
-
-/* END OF LEAGUE MAP COMPONENT */
-/* bottom buttons */
-.download {
-  background-color: #ff5261;
-  padding: 0.3em;
-  border: 5px solid #1a688d;
-  color: azure;
-}
-
-.random {
-  background-color: #ff5261;
-  padding: 1em;
-  width: 350px;
-  border: 5px solid #1a688d;
-  color: azure;
-}
-/* end of bottom buttons */
-/* LEFT SIDE */
-.playcontainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
-  align-items: center;
-  gap: 1em;
-  padding: 1em;
-  height: 550px;
-  border: 4px solid #ff5261;
-  border-radius: 5%;
-  background-color: #14222f;
-  color: azure;
-  margin-bottom: 5em;
-}
-/* END LEFT SIDE */
-/* Modal */
-.chosencontainer {
-  display: flex;
-  flex-direction: row;
-  width: 600px;
-  align-items: center;
-  gap: 1em;
-  padding: 1em;
-  max-height: 600px;
-  border: 5px solid #ff5261;
-  background-color: #14222f;
-  color: azure;
-  z-index: 9999 !important;
-  position: absolute;
-  top: 400px;
-}
-
-.chosencontainer a {
-  color: #ff5261;
-}
-
-.imgdiv {
-  flex: 0.3;
-}
-
-.imgdiv img {
-  width: 75px;
-}
-
-.middlediv {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  align-items: center;
-  flex: 2;
-}
-.middlediv button {
-  width: 100px;
-  background-color: #a79461;
-  color: aliceblue;
-}
-
-.popup {
-  z-index: 9998 !important;
-  width: 100vw;
-  height: 100vh;
-  background-color: #222222;
-  opacity: 95%;
-  position: absolute;
-}
-.rightdiv {
-  margin-bottom: 150px;
-  flex: 0.25;
-}
-.rightdiv button {
-  background-color: #a79461;
-  color: aliceblue;
-}
-/* playable champs */
-.list {
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-
-.list::-webkit-scrollbar {
-  width: 12px;
-}
-
-.list::-webkit-scrollbar-track {
-  background-color: #0c131b;
-}
-
-.list::-webkit-scrollbar-thumb {
-  background-color: #ff5261;
-  border-radius: 6px;
-}
-
-.list::-webkit-scrollbar-thumb:hover {
-  background-color: #a79461;
-}
-
-.list img {
-  width: 35px;
-  margin-right: 0.5em;
-}
-
-ul {
-  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
-.list li {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  padding: 0.5em;
+.filter-group legend {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+  padding: 0 0 0.5rem;
 }
 
-.champion-info {
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  flex: 1 1 0;
+  min-width: 88px;
+  padding: 0.5rem 0.9rem;
+  background: rgb(16 42 65 / 40%);
+  border: 1px solid var(--navy-600);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease, transform 0.18s ease;
+}
+
+.chip:hover {
+  border-color: var(--gold-700);
+  color: var(--gold-100);
+  transform: translateY(-1px);
+}
+
+.chip--on {
+  background: linear-gradient(
+    180deg,
+    rgb(200 170 110 / 22%),
+    rgb(120 90 40 / 22%)
+  );
+  border-color: var(--gold-500);
+  color: var(--gold-100);
+  box-shadow: inset 0 0 12px rgb(200 170 110 / 15%);
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.link-button:hover {
+  color: var(--teal);
+}
+
+/* Champion rows ------------------------------------------------------------ */
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: rgb(1 10 19 / 70%);
+  border: 1px solid var(--navy-600);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.18s ease;
+}
+
+.search-input::placeholder {
+  color: var(--text-faint);
+}
+
+.search-input:focus {
+  border-color: var(--gold-500);
+  outline: none;
+}
+
+.champ-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: min(54vh, 560px);
+  padding-right: 0.35rem;
+}
+
+.champ-row {
   display: flex;
   align-items: center;
+  gap: 0.7rem;
+  padding: 0.32rem 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.champ-row:hover {
+  background: rgb(16 42 65 / 60%);
+  border-color: var(--navy-600);
+}
+
+.champ-row__name {
+  flex: 1;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.champ-row__tags {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--navy-700);
+  border-radius: var(--radius-sm);
+}
+
+.champ-row--banned .champ-row__name {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  text-decoration-color: var(--crimson);
+}
+
+.champ-row--banned .avatar {
+  filter: grayscale(0.75);
+  opacity: 0.85;
+}
+
+.avatar {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gold-700);
+  flex-shrink: 0;
+  object-fit: cover;
+  background: var(--navy-800);
+}
+
+.avatar--fallback {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold-500);
+  background: var(--navy-700);
+}
+
+.icon-button {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-faint);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.icon-button:hover {
+  color: var(--crimson);
+  border-color: var(--crimson);
+  background: rgb(213 68 63 / 12%);
+}
+
+.icon-button--restore:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+  background: rgb(10 200 185 / 12%);
+}
+
+/* Map ---------------------------------------------------------------------- */
+
+.map-caption {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.map-frame {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  /* Matches the source art closely enough that `cover` only trims the empty
+     dark margins instead of eating the outer lanes. */
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gold-700);
+  background: var(--void);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel), 0 0 60px rgb(10 200 185 / 10%);
+}
+
+.map-frame__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.lane-button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lane-button button {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--gold-500);
+  background: radial-gradient(
+    circle at 30% 25%,
+    rgb(27 58 86 / 95%),
+    rgb(1 10 19 / 95%)
+  );
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgb(1 10 19 / 55%), 0 0 18px rgb(200 170 110 / 35%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.lane-button button img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.lane-button button:hover:not(:disabled) {
+  transform: scale(1.16);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgb(1 10 19 / 55%), 0 0 26px rgb(10 200 185 / 60%);
+}
+
+.lane-button button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  filter: grayscale(0.7);
+}
+
+.lane-button__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-100);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-sm);
+  background: rgb(1 10 19 / 85%);
+  border: 1px solid var(--navy-600);
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.lane-button:hover .lane-button__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Positions derived from the map art: top lane on the northern stretch, mid on
+   the centre diagonal, jungle at the dragon pit, bot and support on the
+   southern lane. */
+.lane-button--top {
+  left: 34%;
+  top: 17.6%;
+}
+
+.lane-button--mid {
+  left: 50%;
+  top: 41.5%;
+}
+
+.lane-button--jungle {
+  left: 64.4%;
+  top: 49%;
+}
+
+.lane-button--support {
+  left: 62%;
+  top: 66.6%;
+}
+
+.lane-button--bot {
+  left: 76.4%;
+  top: 62.8%;
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-500);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.button--primary {
+  color: var(--void);
+  background: linear-gradient(180deg, var(--gold-300), var(--gold-700));
+  box-shadow: 0 6px 20px rgb(120 90 40 / 40%);
+}
+
+.button--primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 28px rgb(200 170 110 / 45%);
+}
+
+.button--ghost {
+  color: var(--gold-100);
+  background: rgb(16 42 65 / 55%);
+}
+
+.button--ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.button--wide {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.95rem 1.5rem;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+  filter: grayscale(0.6);
+  box-shadow: none;
+}
+
+/* Banners ------------------------------------------------------------------ */
+
+.banner {
+  max-width: 620px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.banner--error {
+  color: #ffd9d7;
+  background: rgb(213 68 63 / 15%);
+  border: 1px solid var(--crimson);
+}
+
+.banner--warn {
+  color: #f5e0b8;
+  background: rgb(224 163 62 / 14%);
+  border: 1px solid var(--amber);
+}
+
+/* Modal -------------------------------------------------------------------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgb(1 10 19 / 82%);
+  backdrop-filter: blur(6px);
+  animation: fade-in 0.2s ease;
+}
+
+.modal {
+  position: relative;
+  width: min(560px, 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gold-500);
+  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  box-shadow: 0 24px 70px rgb(0 0 0 / 70%), 0 0 50px rgb(200 170 110 / 15%);
+  overflow: hidden;
+  animation: modal-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal__art {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: var(--navy-700);
+}
+
+.modal__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.modal__art-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(1 10 19 / 15%) 0%,
+    rgb(6 20 32 / 55%) 55%,
+    rgb(10 26 43 / 98%) 100%
+  );
+}
+
+.modal__heading {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1rem;
+}
+
+.modal__eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.25rem;
+}
+
+.modal__heading h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  background: linear-gradient(180deg, var(--gold-100), var(--gold-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 20px rgb(0 0 0 / 60%);
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--gold-700);
+  background: rgb(1 10 19 / 80%);
+  color: var(--gold-100);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.modal__close:hover {
+  background: rgb(213 68 63 / 30%);
+  border-color: var(--crimson);
+  transform: rotate(90deg);
+}
+
+.modal__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--navy-600);
+  background: rgb(16 42 65 / 40%);
+}
+
+.stat__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.stat__value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-100);
+}
+
+.modal__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modal__actions .button {
   flex: 1;
 }
 
-.list li button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: white;
-  margin-left: auto;
+.modal__art-fallback {
+  position: absolute;
+  top: 84px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-/* end of playable */
-@media screen and (max-width: 850px) {
-  .Container {
-    flex-direction: column;
-    align-items: center;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive --------------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
-  .leftside,
-  .rightside {
-    margin-bottom: 2em;
+  .layout__col--center {
+    grid-column: 1 / -1;
+    order: -1;
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.25rem 1rem 3rem;
+    gap: 1.25rem;
   }
 
-  .playcontainer,
-  .BlacklistContainer {
-    width: 90%;
-    max-width: 90%;
-    margin-bottom: 2em;
+  .site-header__inner {
+    padding: 0.85rem 1rem;
   }
 
-  .chosencontainer {
-    width: 90%;
-    max-width: 90%;
+  /* Smaller markers so the five lanes stay distinct on a narrow map. */
+  .lane-button button {
+    width: 38px;
+    height: 38px;
+    box-shadow: 0 0 0 3px rgb(1 10 19 / 55%), 0 0 12px rgb(200 170 110 / 35%);
   }
 
-  .Main {
-    padding: 1em;
+  .lane-button button img {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* Labels stay hover-only — five of them at once overlap on a narrow map.
+     The icons are the standard position icons and each button is labelled
+     for screen readers. */
+
+  .modal__art {
+    height: 180px;
+  }
+
+  .champ-list {
+    max-height: 340px;
   }
 }

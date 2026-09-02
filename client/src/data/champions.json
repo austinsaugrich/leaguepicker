@@ -1167,5 +1167,33 @@
     "mana": true,
     "lane": ["Support"],
     "damagetype": "AP"
+  },
+  {
+    "name": "Aurora",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Top", "Jungle"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Ambessa",
+    "attack": "Melee",
+    "mana": false,
+    "lane": ["Top", "Jungle"],
+    "damagetype": "AD"
+  },
+  {
+    "name": "Mel",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Mid", "Support"],
+    "damagetype": "AP"
+  },
+  {
+    "name": "Yunara",
+    "attack": "Ranged",
+    "mana": true,
+    "lane": ["Bot"],
+    "damagetype": "AD"
   }
 ]

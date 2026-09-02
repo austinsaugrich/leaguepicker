@@ -1,4 +1,12 @@
+node_modules/
+dist/
+
+# Python
 venv/
+.venv/
 __pycache__/
+
 *.zip
-node_modules
+
+# Machine-specific Claude Code launch config (absolute paths)
+.claude/
