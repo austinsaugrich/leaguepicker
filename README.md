@@ -36,6 +36,9 @@ output directory `dist`. Cloudflare Pages and Netlify both work on their free
 tiers; Cloudflare's bandwidth is unmetered, which is the reason to prefer it if
 this ever gets linked somewhere busy.
 
+`client/.node-version` pins Node 22 because Vite 7 needs Node 20.19+ and some
+hosts still default to 18.
+
 The whole payload is ~561 KB, of which 202 KB is the map.
 
 ## How the picking works
