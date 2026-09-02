@@ -10,3 +10,6 @@ __pycache__/
 
 # Machine-specific Claude Code launch config (absolute paths)
 .claude/
+
+# Wrangler build cache
+.wrangler/
